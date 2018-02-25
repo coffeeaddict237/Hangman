@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.saraglattstein.hangman.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/panel_3"
+        android:layout_width="371dp"
+        android:layout_height="296dp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageView
+            android:id="@+id/img_gallows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_3"
+            android:layout_marginBottom="21dp"
+            android:layout_marginStart="21dp"
+            android:layout_toEndOf="@+id/tv_1"
+            android:contentDescription="gallows"
+            app:srcCompat="@drawable/android_hangman_gallows" />
+
+        <ImageView
+            android:id="@+id/img_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/img_leg2"
+            android:layout_alignTop="@+id/img_gallows"
+            android:layout_marginTop="24dp"
+            android:contentDescription="head"
+            app:srcCompat="@drawable/android_hangman_head" />
+
+        <ImageView
+            android:id="@+id/img_arm1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_head"
+            android:layout_toEndOf="@+id/img_body"
+            android:contentDescription="arm"
+            app:srcCompat="@drawable/android_hangman_arm2" />
+
+        <ImageView
+            android:id="@+id/img_arm2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_head"
+            android:layout_toStartOf="@+id/img_body"
+            android:contentDescription="arm"
+            app:srcCompat="@drawable/android_hangman_arm1" />
+
+        <ImageView
+            android:id="@+id/img_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_head"
+            android:layout_toStartOf="@+id/img_leg1"
+            android:contentDescription="body"
+            app:srcCompat="@drawable/android_hangman_body" />
+
+        <ImageView
+            android:id="@+id/img_leg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_body"
+            android:layout_toEndOf="@+id/img_gallows"
+            android:contentDescription="leg"
+            app:srcCompat="@drawable/android_hangman_leg2" />
+
+        <ImageView
+            android:id="@+id/img_leg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img_leg1"
+            android:layout_alignEnd="@+id/img_body"
+            android:contentDescription="leg"
+            app:srcCompat="@drawable/android_hangman_leg1" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBaseline="@+id/tv_2"
+            android:layout_alignBottom="@+id/tv_2"
+            android:layout_alignEnd="@+id/img_head"
+            android:background="@drawable/letter_bg"
+            android:textAllCaps="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBaseline="@+id/tv_5"
+            android:layout_alignBottom="@+id/tv_5"
+            android:layout_alignStart="@+id/img_gallows"
+            android:background="@drawable/letter_bg"
+            android:textAllCaps="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBaseline="@+id/tv_3"
+            android:layout_alignBottom="@+id/tv_3"
+            android:layout_toEndOf="@+id/img_leg1"
+            android:background="@drawable/letter_bg"
+            android:textAllCaps="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBaseline="@+id/tv_1"
+            android:layout_alignBottom="@+id/tv_1"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/letter_bg"
+            android:textAllCaps="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="11dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/letter_bg"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/panel_1"
+        android:layout_width="369dp"
+        android:layout_height="200dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="306dp">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="choose:"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
