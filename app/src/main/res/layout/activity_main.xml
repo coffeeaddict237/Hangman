@@ -218,8 +218,12 @@
         android:id="@+id/panel_3"
         android:layout_width="359dp"
         android:layout_height="309dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/img_gallows"
@@ -343,6 +347,14 @@
             android:textAllCaps="true"
             android:textSize="14sp"
             android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/img_head"
+            android:layout_alignParentEnd="true"
+            android:text="New Game" />
 
     </RelativeLayout>
 
