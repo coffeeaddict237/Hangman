@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     public int places; //number letters in word
     private NewGame hang;
     private int current = 0; //correct letters guessed
-    private int lives = 7; //head, body, arm, arm, leg, leg(dead)
+    private int lives = 6; //head, body, arm, arm, leg, leg(dead)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -284,26 +285,29 @@ public class MainActivity extends AppCompatActivity {
 
                 boolean correct = hang.guess(in);
                 if(correct) { //find indices of guessed char and show in view, possible that game will end in win
+                    Log.e("Testing", "user guessed a correct letter");
                     Toast.makeText(MainActivity.this, "CORRECT!", Toast.LENGTH_SHORT).show();
 
                     List indices = hang.getIndex(in);
                     current += indices.size();
+                    Log.e("Testing", "found at indices: "+ indices);
 
+                    String letter = Character.toString(in);
                     for(int i = 0; i < indices.size(); i++) {
+                        if(indices.get(i).toString().equals("0") ) {
+                            tv_1.setText(letter);
+                        }
                         if(indices.get(i).toString().equals("1") ) {
-                            tv_1.setText(in);
+                            tv_2.setText(letter);
                         }
-                        else if(indices.get(i).toString().equals("2") ) {
-                            tv_2.setText(in);
+                        if(indices.get(i).toString().equals("2") ) {
+                            tv_3.setText(letter);
                         }
-                        else if(indices.get(i).toString().equals("3") ) {
-                            tv_3.setText(in);
+                        if(indices.get(i).toString().equals("3") ) {
+                            tv_4.setText(letter);
                         }
-                        else if(indices.get(i).toString().equals("4") ) {
-                            tv_4.setText(in);
-                        }
-                        else { //index is 5
-                            tv_5.setText(in);
+                        if(indices.get(i).toString().equals("4")) {
+                            tv_5.setText(letter);
                         }
                     }
 
@@ -316,11 +320,8 @@ public class MainActivity extends AppCompatActivity {
                 else { //show another body part, possible that game will end if on last life
                     Toast.makeText(MainActivity.this, "incorrect", Toast.LENGTH_SHORT).show();
                     lives --;
-                    if(lives == 6) {
+                    if(lives == 5) {
                         img_head.setVisibility(View.VISIBLE);
-                    }
-                    else if(lives == 5) {
-                        img_body.setVisibility(View.VISIBLE);
                     }
                     else if(lives == 4) {
                         img_body.setVisibility(View.VISIBLE);

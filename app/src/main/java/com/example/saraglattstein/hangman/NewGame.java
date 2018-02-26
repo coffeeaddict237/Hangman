@@ -42,8 +42,8 @@ public class NewGame {
     public List getIndex(char input) {
         List<Integer> places = new ArrayList<>();
         for(int i = 0; i < answer.length(); i++) {
-            if(guess(input)) {
-                places.add(answer.indexOf(input));
+            if(Character.toString(answer.charAt(i)).equals(Character.toString(input))) {
+                places.add(i);
             }
         }
         return places;
