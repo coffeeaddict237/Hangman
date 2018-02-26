@@ -21,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btn_a;
     private Button btn_b;
+    private Button btn_c;
+    private Button btn_d;
+    private Button btn_e;
+    private Button btn_f;
+    private Button btn_g;
     //all the rest...
 
     public String hint;
@@ -43,7 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
         btn_a = findViewById(R.id.btn_a);
         btn_b = findViewById(R.id.btn_b);
-
+        btn_c = findViewById(R.id.btn_c);
+        btn_d = findViewById(R.id.btn_d);
+        btn_e = findViewById(R.id.btn_e);
+        btn_f = findViewById(R.id.btn_f);
+        btn_g = findViewById(R.id.btn_g);
         //all the rest...
 
 
@@ -72,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
         //set tags for keys a -> z to be 1 -> 26
         btn_a.setTag(1);
         btn_b.setTag(2);
+        btn_c.setTag(3);
+        btn_d.setTag(4);
+        btn_e.setTag(5);
+        btn_f.setTag(6);
+        btn_g.setTag(7);
 
         //all the rest...
 
@@ -79,13 +93,15 @@ public class MainActivity extends AppCompatActivity {
         //need on key listener for letter input
         View.OnClickListener textListener = new View.OnClickListener() {
             public void onClick(View view) {
-                char in;
+                char in = 'a'; //default
                 int tag = (Integer) view.getTag();
-
+                Button choice;
 
                 switch (tag) {
+                    //disable button after it is pressed
                     case(1):
                         in = 'a';
+                        choice = btn_a;
                         break;
                     case(2):
                         in = 'b';
@@ -143,6 +159,8 @@ public class MainActivity extends AppCompatActivity {
                     //show another body part, possible that game will end if on last life
 
                 }
+
+
             }
         };
 
