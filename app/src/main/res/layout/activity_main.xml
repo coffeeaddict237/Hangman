@@ -25,13 +25,10 @@
         android:layout_width="368dp"
         android:layout_height="171dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/panel_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8">
+        app:layout_constraintTop_toBottomOf="@+id/btn_finish">
 
         <TableRow
             android:layout_width="match_parent"
@@ -215,16 +212,32 @@
         </TableRow>
     </TableLayout>
 
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:text="New Game?"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toEndOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/panel_3"
+        app:layout_constraintVertical_bias="1.0" />
+
     <RelativeLayout
         android:id="@+id/panel_3"
-        android:layout_width="359dp"
-        android:layout_height="309dp"
+        android:layout_width="321dp"
+        android:layout_height="260dp"
         android:layout_marginBottom="15dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.916">
 
         <ImageView
             android:id="@+id/img_gallows"
@@ -304,8 +317,9 @@
             android:layout_height="60dp"
             android:layout_alignBaseline="@+id/tv_2"
             android:layout_alignBottom="@+id/tv_2"
-            android:layout_alignEnd="@+id/img_head"
+            android:layout_toEndOf="@+id/tv_2"
             android:background="@drawable/letter_bg"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:visibility="visible" />
 
@@ -315,8 +329,9 @@
             android:layout_height="60dp"
             android:layout_alignBaseline="@+id/tv_1"
             android:layout_alignBottom="@+id/tv_1"
-            android:layout_alignStart="@+id/img_gallows"
+            android:layout_toEndOf="@+id/tv_1"
             android:background="@drawable/letter_bg"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:visibility="visible" />
 
@@ -324,10 +339,10 @@
             android:id="@+id/tv_4"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_alignBaseline="@+id/tv_3"
-            android:layout_alignBottom="@+id/tv_3"
-            android:layout_toEndOf="@+id/img_leg1"
+            android:layout_alignStart="@+id/img_leg2"
+            android:layout_below="@+id/img_gallows"
             android:background="@drawable/letter_bg"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:visibility="visible" />
 
@@ -335,10 +350,11 @@
             android:id="@+id/tv_5"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_alignBaseline="@+id/tv_1"
-            android:layout_alignBottom="@+id/tv_1"
-            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@+id/tv_4"
+            android:layout_alignBottom="@+id/tv_4"
+            android:layout_toEndOf="@+id/tv_4"
             android:background="@drawable/letter_bg"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:visibility="visible" />
 
@@ -361,23 +377,10 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/img_head"
             android:layout_alignParentEnd="true"
-            android:text="New Game" />
+            android:text="New Game"
+            android:visibility="invisible" />
 
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/btn_finish"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:text="New Game?"
-        android:textAlignment="center"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.699"
-        app:layout_constraintStart_toEndOf="@+id/tableLayout"
-        app:layout_constraintTop_toBottomOf="@+id/panel_3"
-        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
 
