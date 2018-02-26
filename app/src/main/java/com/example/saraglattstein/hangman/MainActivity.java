@@ -38,7 +38,25 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_e;
     private Button btn_f;
     private Button btn_g;
-    //all the rest...
+    private Button btn_h;
+    private Button btn_i;
+    private Button btn_j;
+    private Button btn_k;
+    private Button btn_l;
+    private Button btn_m;
+    private Button btn_n;
+    private Button btn_o;
+    private Button btn_p;
+    private Button btn_q;
+    private Button btn_r;
+    private Button btn_s;
+    private Button btn_t;
+    private Button btn_u;
+    private Button btn_v;
+    private Button btn_w;
+    private Button btn_x;
+    private Button btn_y;
+    private Button btn_z;
 
     public String hint; //topic
     public String answer; //word to be guessed
@@ -76,15 +94,32 @@ public class MainActivity extends AppCompatActivity {
         btn_e = findViewById(R.id.btn_e);
         btn_f = findViewById(R.id.btn_f);
         btn_g = findViewById(R.id.btn_g);
-        //all the rest...
-
+        btn_h = findViewById(R.id.btn_h);
+        btn_i = findViewById(R.id.btn_i);
+        btn_j = findViewById(R.id.btn_j);
+        btn_k = findViewById(R.id.btn_k);
+        btn_l = findViewById(R.id.btn_l);
+        btn_m = findViewById(R.id.btn_m);
+        btn_n = findViewById(R.id.btn_n);
+        btn_o = findViewById(R.id.btn_o);
+        btn_p = findViewById(R.id.btn_p);
+        btn_q = findViewById(R.id.btn_q);
+        btn_r = findViewById(R.id.btn_r);
+        btn_s = findViewById(R.id.btn_s);
+        btn_t = findViewById(R.id.btn_t);
+        btn_u = findViewById(R.id.btn_u);
+        btn_v = findViewById(R.id.btn_v);
+        btn_w = findViewById(R.id.btn_w);
+        btn_x = findViewById(R.id.btn_x);
+        btn_y = findViewById(R.id.btn_y);
+        btn_z = findViewById(R.id.btn_z);
 
         hang = new NewGame();
         hint = hang.getHint();
         answer = hang.getAnswer();
         places = hang.getLength();
 
-        //if four, show first four
+        //if four, show first four only
         if(places == 4) {
             tv_5.setVisibility(View.INVISIBLE);
         }
@@ -101,16 +136,32 @@ public class MainActivity extends AppCompatActivity {
         btn_e.setTag(5);
         btn_f.setTag(6);
         btn_g.setTag(7);
-
-        //all the rest...
-
+        btn_h.setTag(8);
+        btn_i.setTag(9);
+        btn_j.setTag(10);
+        btn_k.setTag(11);
+        btn_l.setTag(12);
+        btn_m.setTag(13);
+        btn_n.setTag(14);
+        btn_o.setTag(15);
+        btn_p.setTag(16);
+        btn_q.setTag(17);
+        btn_r.setTag(18);
+        btn_s.setTag(19);
+        btn_t.setTag(20);
+        btn_u.setTag(21);
+        btn_v.setTag(22);
+        btn_w.setTag(23);
+        btn_x.setTag(24);
+        btn_y.setTag(25);
+        btn_z.setTag(26);
 
         //need on key listener for letter input
         View.OnClickListener textListener = new View.OnClickListener() {
             public void onClick(View view) {
                 char in = 'a'; //default
                 int tag = (Integer) view.getTag();
-                Button choice = btn_a;
+                Button choice = btn_a; //default
 
                 switch (tag) { //disable button after it is pressed
 
@@ -144,15 +195,92 @@ public class MainActivity extends AppCompatActivity {
                         in = 'g';
                         choice = btn_g;
                         break;
-
-                        //all the rest...
+                    case(8):
+                        in = 'h';
+                        choice = btn_h;
+                        break;
+                    case(9):
+                        in = 'i';
+                        choice = btn_i;
+                        break;
+                    case(10):
+                        in = 'j';
+                        choice = btn_j;
+                        break;
+                    case(11):
+                        in = 'k';
+                        choice = btn_k;
+                        break;
+                    case(12):
+                        in = 'l';
+                        choice = btn_l;
+                        break;
+                    case(13):
+                        in = 'm';
+                        choice = btn_m;
+                        break;
+                    case(14):
+                        in = 'n';
+                        choice = btn_n;
+                        break;
+                    case(15):
+                        in = 'o';
+                        choice = btn_o;
+                        break;
+                    case(16):
+                        in = 'p';
+                        choice = btn_p;
+                        break;
+                    case(17):
+                        in = 'q';
+                        choice = btn_q;
+                        break;
+                    case(18):
+                        in = 'r';
+                        choice = btn_r;
+                        break;
+                    case(19):
+                        in = 's';
+                        choice = btn_s;
+                        break;
+                    case(20):
+                        in = 't';
+                        choice = btn_t;
+                        break;
+                    case(21):
+                        in = 'u';
+                        choice = btn_u;
+                        break;
+                    case(22):
+                        in = 'v';
+                        choice = btn_v;
+                        break;
+                    case(23):
+                        in = 'w';
+                        choice = btn_w;
+                        break;
+                    case(24):
+                        in = 'x';
+                        choice = btn_x;
+                        break;
+                    case(25):
+                        in = 'y';
+                        choice = btn_y;
+                        break;
+                    case(26):
+                        in = 'z';
+                        choice = btn_z;
+                        break;
 
                     case(100): //start a new game
                         Toast.makeText(MainActivity.this, "starting new game...", Toast.LENGTH_SHORT).show();
+                        finish();
+                        recreate();
 
                 }
                 choice.setBackgroundColor(Color.DKGRAY);
-                choice.setTag(0);
+                choice.setEnabled(false);
+                choice.setClickable(false);
 
                 boolean correct = hang.guess(in);
                 if(correct) { //find indices of guessed char and show in view, possible that game will end in win
@@ -182,6 +310,7 @@ public class MainActivity extends AppCompatActivity {
                     if(current == places) { //game is over, user has won, start new game
                         Toast.makeText(MainActivity.this, "YOU WON!", Toast.LENGTH_SHORT).show();
                         btn_finish.setVisibility(View.VISIBLE);
+                        btn_finish.setTag(100);
                     }
                 }
                 else { //show another body part, possible that game will end if on last life
@@ -218,6 +347,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         btn_new.setOnClickListener(textListener);
+        btn_finish.setOnClickListener(textListener);
 
         btn_a.setOnClickListener(textListener);
         btn_b.setOnClickListener(textListener);
@@ -226,6 +356,25 @@ public class MainActivity extends AppCompatActivity {
         btn_e.setOnClickListener(textListener);
         btn_f.setOnClickListener(textListener);
         btn_g.setOnClickListener(textListener);
-        //all the rest...
+        btn_h.setOnClickListener(textListener);
+        btn_i.setOnClickListener(textListener);
+        btn_j.setOnClickListener(textListener);
+        btn_k.setOnClickListener(textListener);
+        btn_l.setOnClickListener(textListener);
+        btn_m.setOnClickListener(textListener);
+        btn_n.setOnClickListener(textListener);
+        btn_o.setOnClickListener(textListener);
+        btn_p.setOnClickListener(textListener);
+        btn_q.setOnClickListener(textListener);
+        btn_r.setOnClickListener(textListener);
+        btn_s.setOnClickListener(textListener);
+        btn_t.setOnClickListener(textListener);
+        btn_u.setOnClickListener(textListener);
+        btn_v.setOnClickListener(textListener);
+        btn_w.setOnClickListener(textListener);
+        btn_x.setOnClickListener(textListener);
+        btn_y.setOnClickListener(textListener);
+        btn_z.setOnClickListener(textListener);
+
     }
 }
