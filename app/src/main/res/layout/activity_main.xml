@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="368dp"
         android:layout_height="171dp"
         android:layout_marginBottom="8dp"
@@ -244,6 +245,7 @@
             android:layout_alignTop="@+id/img_gallows"
             android:layout_marginTop="24dp"
             android:contentDescription="head"
+            android:visibility="invisible"
             app:srcCompat="@drawable/android_hangman_head" />
 
         <ImageView
@@ -253,6 +255,7 @@
             android:layout_below="@+id/img_head"
             android:layout_toEndOf="@+id/img_body"
             android:contentDescription="arm"
+            android:visibility="invisible"
             app:srcCompat="@drawable/android_hangman_arm2" />
 
         <ImageView
@@ -262,6 +265,7 @@
             android:layout_below="@+id/img_head"
             android:layout_toStartOf="@+id/img_body"
             android:contentDescription="arm"
+            android:visibility="invisible"
             app:srcCompat="@drawable/android_hangman_arm1" />
 
         <ImageView
@@ -271,6 +275,7 @@
             android:layout_below="@+id/img_head"
             android:layout_toStartOf="@+id/img_leg1"
             android:contentDescription="body"
+            android:visibility="invisible"
             app:srcCompat="@drawable/android_hangman_body" />
 
         <ImageView
@@ -280,6 +285,7 @@
             android:layout_below="@+id/img_body"
             android:layout_toEndOf="@+id/img_gallows"
             android:contentDescription="leg"
+            android:visibility="invisible"
             app:srcCompat="@drawable/android_hangman_leg2" />
 
         <ImageView
@@ -289,6 +295,7 @@
             android:layout_alignBottom="@+id/img_leg1"
             android:layout_alignEnd="@+id/img_body"
             android:contentDescription="leg"
+            android:visibility="invisible"
             app:srcCompat="@drawable/android_hangman_leg1" />
 
         <TextView
@@ -357,6 +364,20 @@
             android:text="New Game" />
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:text="New Game?"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toEndOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/panel_3"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
 

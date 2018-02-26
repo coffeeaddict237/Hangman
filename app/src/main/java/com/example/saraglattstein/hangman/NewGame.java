@@ -10,7 +10,7 @@ public class NewGame {
 
     private String hint;
     private String answer;
-    private String[] animals = {"dog", "cat", "horse", "fish", "snake", "bird", "lion", "owl", "mouse", "sheep"};
+    private String[] animals = {"hippo", "camel", "horse", "fish", "snake", "sloth", "lion", "otter", "mouse", "sheep"};
     private String[] food = {"apple", "pear", "peach", "melon", "lemon", "lime", "grape", "mango", "kiwi", "plum"};
 
     public NewGame() {
