@@ -12,15 +12,16 @@ public class NewGame {
     private String answer;
     private String[] animals = {"hippo", "camel", "horse", "fish", "snake", "sloth", "lion", "otter", "mouse", "sheep"};
     private String[] food = {"apple", "pear", "peach", "melon", "lemon", "lime", "grape", "mango", "kiwi", "plum"};
+    private int places;
 
     public NewGame() {
         //random select animals/food & random select within list
         if(Math.random() > 0.5) {
-            hint = "animals";
+            hint = "Hint: animals";
             answer = animals[(int) (Math.random() * 10)];
         }
         else {
-            hint = "food";
+            hint = "Hint: food";
             answer = food[(int) (Math.random() * 10)];
         }
 
@@ -28,9 +29,25 @@ public class NewGame {
 
     public String getHint() { return hint;}
 
+    public void setHint(String n) {
+        hint = n;
+        return;
+
+    }
+
     public String getAnswer() {return answer;}
 
+    public void setAnswer(String a) {
+        answer = a;
+        return;
+    }
+
     public int getLength() {return answer.length();}
+
+    public void setLength(int i) {
+        places = i;
+        return;
+    }
 
     public boolean guess(char input) {
         if(answer.indexOf(input) != -1) {

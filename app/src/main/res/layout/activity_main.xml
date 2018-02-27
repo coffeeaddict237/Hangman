@@ -22,13 +22,15 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="368dp"
-        android:layout_height="171dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/panel_3"
+        android:layout_width="377dp"
+        android:layout_height="176dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_finish">
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
         <TableRow
             android:layout_width="match_parent"
@@ -213,15 +215,15 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/btn_finish"
+        android:id="@+id/btn_new"
         android:layout_width="104dp"
         android:layout_height="58dp"
         android:text="New Game?"
         android:textAlignment="center"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tableLayout"
         app:layout_constraintTop_toBottomOf="@+id/panel_3"
         app:layout_constraintVertical_bias="1.0" />
@@ -238,6 +240,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.916">
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="214dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="6dp"
+            android:text="Hint:"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/img_gallows"
+            app:layout_constraintEnd_toStartOf="@+id/btn_new"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/img_gallows"
@@ -370,15 +387,6 @@
             android:textAllCaps="true"
             android:textSize="14sp"
             android:visibility="visible" />
-
-        <Button
-            android:id="@+id/btn_new"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/img_head"
-            android:layout_alignParentEnd="true"
-            android:text="New Game"
-            android:visibility="invisible" />
 
     </RelativeLayout>
 
