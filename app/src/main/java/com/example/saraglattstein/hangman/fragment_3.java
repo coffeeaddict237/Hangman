@@ -44,7 +44,7 @@ public class fragment_3 extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //setUpFragmentGUI( container );
+
         View fragmentView = inflater.inflate(R.layout.fragment_3, container, false);
 
         tv_1 = fragmentView.findViewById(R.id.tv_1);
@@ -89,62 +89,10 @@ public class fragment_3 extends Fragment implements View.OnClickListener {
         }
     }
 
-    public void setUpFragmentGUI( ViewGroup container ) {
-        if( btn_new == null ) {
-            btn_new = new Button( getActivity() );
-            container.addView( btn_new );
-        }
-        if( tv_1 == null ) {
-            tv_1 = new TextView( getActivity() );
-            container.addView( tv_1 );
-        }
-        if( tv_2 == null ) {
-            tv_2 = new TextView( getActivity() );
-            container.addView( tv_2 );
-        }
-        if( tv_3 == null ) {
-            tv_3 = new TextView( getActivity() );
-            container.addView( tv_3 );
-        }
-        if( tv_4 == null ) {
-            tv_4 = new TextView( getActivity() );
-            container.addView( tv_4 );
-        }
-        if( tv_5 == null ) {
-            tv_5 = new TextView( getActivity() );
-            container.addView( tv_5 );
-        }
-        if( img_arm1 == null ) {
-            img_arm1 = new ImageView( getActivity() );
-            container.addView( img_arm1 );
-        }
-        if( img_arm2 == null ) {
-            img_arm2 = new ImageView( getActivity() );
-            container.addView( img_arm2 );
-        }
-        if( img_body == null ) {
-            img_body = new ImageView( getActivity() );
-            container.addView( img_body );
-        }
-        if( img_head == null ) {
-            img_head = new ImageView( getActivity() );
-            container.addView( img_head );
-        }
-        if( img_leg1 == null ) {
-            img_leg1 = new ImageView( getActivity() );
-            container.addView( img_leg1 );
-        }
-        if( img_leg2 == null ) {
-            img_leg2 = new ImageView( getActivity() );
-            container.addView( img_leg2 );
-        }
-
-    }
-
     public void onStart() {
         Log.e("Testing", "Starting fragment 3");
         super.onStart();
-        View fragmentView = getView();
+
         MainActivity act = (MainActivity) getActivity();
 
         //if four, show first four only
@@ -158,12 +106,6 @@ public class fragment_3 extends Fragment implements View.OnClickListener {
         Log.e("Testing", "On life: " + (life-1));
         hangman[6-life].setVisibility(View.VISIBLE);
         setLives(life-1);
-    }
-
-    //unsure if this method will be needed or not if on restart, onStart is always called
-    public void setHide() {
-        Log.e("Testing", "Only 4 places need to be shown");
-        tv_5.setVisibility(View.INVISIBLE);
     }
 
     public void showLetter(char c, List indices) {
