@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/panel_3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView8">
+
+        <ImageView
+            android:id="@+id/img_gallows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="21dp"
+            android:layout_marginStart="21dp"
+            android:contentDescription="gallows"
+            app:layout_constraintBottom_toTopOf="@+id/tv_3"
+            app:layout_constraintStart_toEndOf="@+id/tv_1"
+            app:srcCompat="@drawable/android_hangman_gallows" />
+
+        <ImageView
+            android:id="@+id/img_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:contentDescription="head"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/img_leg2"
+            app:layout_constraintTop_toTopOf="@+id/img_gallows"
+            app:srcCompat="@drawable/android_hangman_head" />
+
+        <ImageView
+            android:id="@+id/img_arm1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="arm"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/img_body"
+            app:layout_constraintTop_toBottomOf="@+id/img_head"
+            app:srcCompat="@drawable/android_hangman_arm2" />
+
+        <ImageView
+            android:id="@+id/img_arm2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="arm"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/img_body"
+            app:layout_constraintTop_toBottomOf="@+id/img_head"
+            app:srcCompat="@drawable/android_hangman_arm1" />
+
+        <ImageView
+            android:id="@+id/img_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="body"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/img_leg1"
+            app:layout_constraintTop_toBottomOf="@+id/img_head"
+            app:srcCompat="@drawable/android_hangman_body" />
+
+        <ImageView
+            android:id="@+id/img_leg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="leg"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/img_gallows"
+            app:layout_constraintTop_toBottomOf="@+id/img_body"
+            app:srcCompat="@drawable/android_hangman_leg2" />
+
+        <ImageView
+            android:id="@+id/img_leg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="leg"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/img_leg1"
+            app:layout_constraintEnd_toEndOf="@+id/img_body"
+            app:srcCompat="@drawable/android_hangman_leg1" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/letter_bg"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:visibility="visible"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_2"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_2"
+            app:layout_constraintStart_toEndOf="@+id/tv_2" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/letter_bg"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:visibility="visible"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_1"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_1"
+            app:layout_constraintStart_toEndOf="@+id/tv_1" />
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/letter_bg"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/img_leg2"
+            app:layout_constraintTop_toBottomOf="@+id/img_gallows" />
+
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/letter_bg"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:visibility="visible"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_4"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_4"
+            app:layout_constraintStart_toEndOf="@+id/tv_4" />
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/letter_bg"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="New Game"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/img_head"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_lives"
+            android:layout_width="60dp"
+            android:layout_height="61dp"
+            android:layout_marginBottom="114dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="64dp"
+            android:text="6"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

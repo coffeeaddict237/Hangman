@@ -13,6 +13,9 @@ public class NewGame {
     private String[] animals = {"hippo", "camel", "horse", "fish", "snake", "sloth", "lion", "otter", "mouse", "sheep"};
     private String[] food = {"apple", "pear", "peach", "melon", "lemon", "lime", "grape", "mango", "kiwi", "plum"};
     private int places;
+    private int lives = 6; //head, body, arm, arm, leg, leg(dead)
+    private char lastGuess;
+    private int current = 0;
 
     public NewGame() {
         //random select animals/food & random select within list
@@ -21,9 +24,10 @@ public class NewGame {
             answer = animals[(int) (Math.random() * 10)];
         }
         else {
-            hint = "Hint: food";
+            hint = "Hint: fruit";
             answer = food[(int) (Math.random() * 10)];
         }
+        places = answer.length();
 
     }
 
@@ -42,7 +46,7 @@ public class NewGame {
         return;
     }
 
-    public int getLength() {return answer.length();}
+    public int getLength() {return places;}
 
     public void setLength(int i) {
         places = i;
@@ -50,9 +54,12 @@ public class NewGame {
     }
 
     public boolean guess(char input) {
+        lastGuess = input;
         if(answer.indexOf(input) != -1) {
+            current++;
             return true;
         }
+        lives --;
         return false;
     }
 
@@ -66,5 +73,21 @@ public class NewGame {
         return places;
     }
 
+    public int getLives() {return lives;}
 
+    public void setLives(int input) {
+        lives = input;
+        return;
+    }
+
+    public char getLastGuess() {
+        if(lastGuess != 0) {
+            return lastGuess;
+        }
+        return 0;
+    }
+
+    public boolean isWin() {
+        return current == places;
+    }
 }
